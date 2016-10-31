@@ -17,7 +17,8 @@ namespace TallGuyApp
             ScaryScary fingersTheClown = new ScaryScary("big shoes", 14);
             FunnyFunny someFunnyClown = fingersTheClown;
             IScaryClown someOtherScaryClown = someFunnyClown as ScaryScary;
-            //someOtherScaryClown.Honk();
+            someOtherScaryClown.Honk();
+            someOtherScaryClown.ScareLittleChildren();
             Console.ReadKey();
         }
     }

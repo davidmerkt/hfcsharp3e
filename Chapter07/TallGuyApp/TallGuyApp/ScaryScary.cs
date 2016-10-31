@@ -18,6 +18,7 @@ namespace TallGuyApp
         public void ScareLittleChildren()
         {
             Console.WriteLine("Boo‼ Gotcha‼");
+            Console.WriteLine("You can't have my {0}", base.funnyThingIHave);
         }
 
         public ScaryScary(string funnyThingIHave, int numberOfScaryThings) : base(funnyThingIHave)

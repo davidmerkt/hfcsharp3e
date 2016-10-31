@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TallGuyApp
+namespace HouseClassModel
 {
-    interface IScaryClown : IClown
+    class Room : Location
     {
-        string ScaryThingIHave { get; }
-        void ScareLittleChildren();
     }
 }

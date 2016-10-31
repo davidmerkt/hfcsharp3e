@@ -8,7 +8,7 @@ namespace TallGuyApp
 {
     class FunnyFunny : IClown
     {
-        private string funnyThingIHave;
+        protected string funnyThingIHave;
 
         public string FunnyThingIHave
         {
