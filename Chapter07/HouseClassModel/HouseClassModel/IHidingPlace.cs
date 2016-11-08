@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace HouseClassModel
 {
-    interface IHasExteriorDoor
+    interface IHidingPlace
     {
-        string DoorDescription { get; }
-        Location DoorLocation { get; set; }
+        string HidingPlace { get; }
     }
 }
