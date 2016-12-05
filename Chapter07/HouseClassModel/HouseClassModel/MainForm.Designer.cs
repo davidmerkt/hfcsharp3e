@@ -32,12 +32,14 @@
             this.btnGoThroughDoor = new System.Windows.Forms.Button();
             this.exits = new System.Windows.Forms.ComboBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.check = new System.Windows.Forms.Button();
+            this.hide = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGoHere
             // 
             this.btnGoHere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGoHere.Location = new System.Drawing.Point(12, 188);
+            this.btnGoHere.Location = new System.Drawing.Point(12, 160);
             this.btnGoHere.Name = "btnGoHere";
             this.btnGoHere.Size = new System.Drawing.Size(75, 23);
             this.btnGoHere.TabIndex = 0;
@@ -62,7 +64,7 @@
             this.exits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.exits.FormattingEnabled = true;
-            this.exits.Location = new System.Drawing.Point(93, 188);
+            this.exits.Location = new System.Drawing.Point(93, 160);
             this.exits.Name = "exits";
             this.exits.Size = new System.Drawing.Size(177, 24);
             this.exits.TabIndex = 2;
@@ -75,18 +77,43 @@
             this.txtDescription.Location = new System.Drawing.Point(12, 12);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(258, 170);
+            this.txtDescription.Size = new System.Drawing.Size(258, 142);
             this.txtDescription.TabIndex = 3;
+            // 
+            // check
+            // 
+            this.check.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.check.Location = new System.Drawing.Point(12, 189);
+            this.check.Name = "check";
+            this.check.Size = new System.Drawing.Size(258, 23);
+            this.check.TabIndex = 4;
+            this.check.Text = "Check…";
+            this.check.UseVisualStyleBackColor = true;
+            this.check.Click += new System.EventHandler(this.check_Click);
+            // 
+            // hide
+            // 
+            this.hide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.hide.Location = new System.Drawing.Point(12, 160);
+            this.hide.Name = "hide";
+            this.hide.Size = new System.Drawing.Size(258, 81);
+            this.hide.TabIndex = 5;
+            this.hide.Text = "Hide…";
+            this.hide.UseVisualStyleBackColor = true;
+            this.hide.Click += new System.EventHandler(this.hide_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.check);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.exits);
             this.Controls.Add(this.btnGoThroughDoor);
             this.Controls.Add(this.btnGoHere);
+            this.Controls.Add(this.hide);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 300);
@@ -103,6 +130,8 @@
         private System.Windows.Forms.Button btnGoThroughDoor;
         private System.Windows.Forms.ComboBox exits;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Button check;
+        private System.Windows.Forms.Button hide;
     }
 }
 
