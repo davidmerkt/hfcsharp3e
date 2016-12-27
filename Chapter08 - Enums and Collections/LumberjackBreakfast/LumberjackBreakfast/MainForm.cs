@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LumberjackBreakfast
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private Queue<Lumberjack> breakfastLine = new Queue<Lumberjack>();
+
+        private void addLumberjack_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(lumberjackName.Text)) 
+                return;
+            breakfastLine.Enqueue(new Lumberjack(lumberjackName.Text));
+            lumberjackName.Text = "";
+            RedrawList();
+        }
+
+        private void addFlapjacks_Click(object sender, EventArgs e)
+        {
+            if (breakfastLine.Count == 0) return;
+            Flapjack food;
+            if (crispy.Checked == true)
+                food = Flapjack.Crispy;
+            else if (soggy.Checked == true)
+                food = Flapjack.Soggy;
+            else if (browned.Checked == true)
+                food = Flapjack.Browned;
+            else
+                food = Flapjack.Banana;
+            Lumberjack currentLumberjack = breakfastLine.Peek();
+            currentLumberjack.TakeFlapjacks(food,
+            (int)numberOfFlapjacks.Value);
+            RedrawList();
+        }
+
+        private void nextLumberjack_Click(object sender, EventArgs e)
+        {
+            if (breakfastLine.Count == 0) 
+                return;
+            Lumberjack nextLumberjack = breakfastLine.Dequeue();
+            nextLumberjack.EatFlapjacks();
+            nextInLine.Text = "";
+            RedrawList();
+        }
+
+        private void RedrawList()
+        {
+            int number = 1;
+            line.Items.Clear();
+            foreach (Lumberjack lumberjack in breakfastLine)
+            {
+                line.Items.Add(number + ". " + lumberjack.Name);
+                number++;
+            }
+            if (breakfastLine.Count == 0)
+            {
+                groupBox1.Enabled = false;
+                nextInLine.Text = "";
+            }
+            else
+            {
+                groupBox1.Enabled = true;
+                Lumberjack currentLumberjack = breakfastLine.Peek();
+                nextInLine.Text = currentLumberjack.Name + " has "
+                + currentLumberjack.FlapjackCount + " flapjacks";
+            }
+        }
+    }
+}
